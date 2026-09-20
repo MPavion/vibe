@@ -45,6 +45,7 @@ jobs:
 
       - name: Build
         working-directory: ./desktop
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
