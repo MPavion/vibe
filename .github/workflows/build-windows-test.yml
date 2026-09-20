@@ -47,11 +47,8 @@ jobs:
         working-directory: ./desktop
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: >
-          pnpm exec tauri build
-          --target x86_64-pc-windows-msvc
-          --bundles nsis
-          --config "{\"bundle\":{\"createUpdaterArtifacts\":false}}"
+        run: |
+          pnpm exec tauri build --target x86_64-pc-windows-msvc --bundles nsis --config '{"bundle":{"createUpdaterArtifacts":false}}'
 
       - name: Upload installer
         uses: actions/upload-artifact@v4
